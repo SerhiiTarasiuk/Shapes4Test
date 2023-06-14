@@ -3,18 +3,22 @@ class Circle extends BaseShape {
 
     public Circle(double radius, String color) {
         this.radius = radius;
-        this.area = Math.PI * radius * radius;
         this.color = color;
     }
 
     @Override
     public void printMe() {
-        System.out.println("Фігура: коло, площа: " + area +
-                " кв.од., радіус: " + radius +
-                " од., колір: " + color + ".");
+        System.out.println("Фігура: коло, площа: " + getArea() +
+                " кв.од., радіус: " + getRadius() +
+                " од., колір: " + getColour() + ".");
     }
 
     public double getRadius() {
         return radius;
+    }
+
+    public double getArea() {
+        area = Math.PI * radius * radius;
+        return area;
     }
 }

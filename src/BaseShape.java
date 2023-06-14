@@ -5,9 +5,7 @@ abstract class BaseShape {
 
     public abstract void printMe();
 
-    public double getArea() {
-        return area;
-    }
+    public abstract double getArea();
 
     public String getColour() {
         return color;

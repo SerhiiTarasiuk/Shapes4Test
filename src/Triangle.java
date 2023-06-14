@@ -8,18 +8,24 @@ class Triangle extends BaseShape {
         this.lengthB = lengthB;
         this.lengthC = lengthC;
         this.color = color;
-        double semiPerimeter = (lengthA + lengthB + lengthC) / 2;
-        this.area = Math.sqrt(semiPerimeter * (semiPerimeter - lengthA) *
-                (semiPerimeter - lengthB) * (semiPerimeter - lengthC));
     }
 
     @Override
     public void printMe() {
-        System.out.println("Фігура: трикутник, площа: " + area + " кв.од., колір: " + color +
+        System.out.println("Фігура: трикутник, площа: " + getArea() + " кв.од., колір: " + getColour() +
                 ", довжина сторони A: " + lengthA +
                 ", довжина сторони B: " + lengthB +
                 ", довжина сторони C: " + lengthC +
                 ", Трикутник прямокутній = " + isRightAngled() + " .");
+    }
+
+
+    @Override
+    public double getArea() {
+        double semiPerimeter = (lengthA + lengthB + lengthC) / 2;
+        this.area = Math.sqrt(semiPerimeter * (semiPerimeter - lengthA) *
+                (semiPerimeter - lengthB) * (semiPerimeter - lengthC));
+        return area;
     }
 
     public boolean isRightAngled() {

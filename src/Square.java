@@ -3,18 +3,22 @@ class Square extends BaseShape {
 
     public Square(double lenghtA, String color) {
         this.lenghtA = lenghtA;
-        this.area = lenghtA * lenghtA;
         this.color = color;
     }
 
     @Override
     public void printMe() {
-        System.out.println("Фігура: квадрат, площа: " + area +
-                " кв.од., довжина сторони: " + lenghtA +
-                " од., колір: " + color + ".");
+        System.out.println("Фігура: квадрат, площа: " + getArea() +
+                " кв.од., довжина сторони: " + getLengthA() +
+                " од., колір: " + getColour() + ".");
     }
 
     public double getLengthA() {
         return lenghtA;
+    }
+
+    public double getArea() {
+        area = lenghtA * lenghtA;
+        return area;
     }
 }

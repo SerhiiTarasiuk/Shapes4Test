@@ -8,27 +8,25 @@ class Trapeze extends BaseShape
             this.lenghtHighSide = lenghtHighSide;
             this.lenghtLowSide = lenghtLowSide;
             this.lenghtSide = lenghtSide;
-            this.area = (lenghtLowSide + lenghtHighSide) * lenghtSide / 2;
             this.color = color;
         }
 
         @Override
         public void printMe() {
-            System.out.println("Фігура: трапеція, площа: " + area + " кв.од., колір: " + color +
-                    ", верхнє основання: " + lenghtHighSide +
-                    ", нижнє основання: " + lenghtLowSide +
-                    ", висота: " + lenghtSide + ".");
+            System.out.println("Фігура: трапеція, площа: " + getArea() + " кв.од., колір: " + getColour() +
+                    ", верхня основа " + getLenghtHighSide() +
+                    ", нижня основа: " + getLenghtLowSide() +
+                    ", бічна основа: " + getLenghtLowSide() + ".");
+        }
+        @Override
+        public double getArea() {
+            area = (lenghtLowSide + lenghtHighSide) * lenghtSide / 2;
+            return area;
         }
 
-        public double getLenghtHighSide() {
-            return lenghtHighSide;
-        }
+        public double getLenghtHighSide() {return lenghtHighSide;}
 
-        public double getLenghtLowSide() {
-            return lenghtLowSide;
-        }
+        public double getLenghtLowSide() {return lenghtLowSide;}
 
-        public double getLenghtSide() {
-            return lenghtSide;
-        }
+        public double getLenghtSide() {return lenghtSide;}
     }
